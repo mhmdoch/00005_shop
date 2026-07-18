@@ -24,5 +24,12 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
             </div>
         </div>
-    </div>
+
+    </div><?= \App\Helper\AppHelper::link() ?>
 <?php }]; ?>
+
+<?php foreach ($opt["examples"] as $example) { ?>
+    <li>
+        <?= e($example["content"]) ?>
+    </li>
+<?php } ?>

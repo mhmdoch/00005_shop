@@ -1,7 +1,4 @@
-body {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
+body {}
 
 h3 {
     margin-top: 2rem;
@@ -26,4 +23,8 @@ h3 {
 hr {
     margin-top: 2rem;
     margin-bottom: 2rem;
+}
+
+.navbar {
+    margin: 0 0;
 }
