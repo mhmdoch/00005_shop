@@ -1,4 +1,8 @@
-<?php use App\Helper\AppHelper; return ["layout" => function ($opt, $body, $head) { ?>
+<?php
+
+use App\Helper\AppHelper;
+
+return ["layout" => function ($opt, $body, $head) { ?>
     <!doctype html>
     <html class="no-js">
 
@@ -16,19 +20,21 @@
 
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">daShop</a>
+                <a class="navbar-brand" href="/">daShop</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarsExample07">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Willkommen <span class="sr-only">(current)</span></a>
+                        <li class='nav-item <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "") ?>'>
+                            <a class="nav-link" href="/">Willkommen <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown  <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "catalog") ?>">
                             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Katalog</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown07">
+                                <a class="dropdown-item" href="/catalog">Alle Produkte</a>
+
                                 <a class="dropdown-item" href="#">Sport</a>
                                 <a class="dropdown-item" href="#">Spielzeug</a>
                                 <a class="dropdown-item" href="#">Bekleidung</a>
