@@ -14,7 +14,7 @@
     <ul>
         <?php foreach ($opt["examples"] as $example) { ?>
             <li>
-                <?= e($example["content"]) ?>
+                <?= e($example["name"]) ?>
             </li>
         <?php } ?>
     </ul>

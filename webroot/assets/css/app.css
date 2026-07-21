@@ -28,3 +28,60 @@ hr {
 .navbar {
     margin: 0 0;
 }
+
+.login-form-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.login-form-top input {
+    padding: 3px 3px;
+    background-color: rgb(85, 88, 90);
+    width: 140px;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+.login-form-top input:-webkit-autofill,
+.login-form-top input:-webkit-autofill:hover,
+.login-form-top input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 1000px rgb(85, 88, 90) inset;
+    -webkit-text-fill-color: white;
+}
+
+.login-form-top button {
+    background-color: rgb(85, 88, 90);
+    width: 60px;
+    color: white;
+    border: 1px solid black;
+    font-size: 0.8rem;
+}
+
+.login-form-top button:hover {
+    background-color: rgb(114, 117, 119);
+    color: rgb(169, 255, 236);
+
+}
+
+.login-fields {
+    display: flex;
+    gap: 5px;
+}
+
+.login-links {
+    color: white;
+    align-self: stretch;
+    text-align: right;
+}
+
+.login-links a {
+    text-decoration: none;
+    color: rgb(0, 255, 200);
+}
+
+.login-links a:hover {
+    text-decoration: none;
+    color: rgb(169, 255, 236);
+}

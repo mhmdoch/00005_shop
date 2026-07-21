@@ -34,10 +34,11 @@ return ["layout" => function ($opt, $body, $head) { ?>
                             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Katalog</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown07">
                                 <a class="dropdown-item" href="/catalog">Alle Produkte</a>
+                                <?php foreach ($opt["request"]->store["sideBarElements"] ?? [] as $category) { ?>
 
-                                <a class="dropdown-item" href="#">Sport</a>
-                                <a class="dropdown-item" href="#">Spielzeug</a>
-                                <a class="dropdown-item" href="#">Bekleidung</a>
+                                    <a class="dropdown-item" href="#"><?= e($category["name"]) ?></a>
+
+                                <?php } ?>
                             </div>
                         </li>
                         <li class="nav-item">
@@ -55,9 +56,40 @@ return ["layout" => function ($opt, $body, $head) { ?>
                             </div>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-md-0">
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                    </form>
+                    <div class="my-2 my-md-0 login-form-top">
+                        <?php if ($opt["user"]->isLoggedIn) : ?>
+                            <span class="text-right">
+                                <?= e($opt["user"]->fields["email"]) ?>
+                                -
+                                <a href="<?= $opt["root"] ?>login/logout">Logout</a>
+                            </span>
+                        <?php else : ?>
+                            <div id="login-error-label" data-test="error"></div>
+                            <div class="login-fields">
+                                <input type="email" id="username" data-test="username">
+                                <input type="password" id="password" data-test="password">
+                                <button id="btnLogin" data-test="btn-login">Login</button>
+                            </div>
+                            <div class="login-links">
+                                <a href="<?= $opt["root"]; ?>login/signup">Registrieren</a>
+                                -
+                                <a href="<?= $opt["root"]; ?>login/forgot-password">Passwort vergessen?</a>
+                            </div>
+                            <script>
+                                function login() {
+                                    Z.Presets.Login("username", "password", "login-error-label");
+                                }
+
+                                $("#btnLogin").click(() => {
+                                    login();
+                                });
+
+                                $("#username, #password").keyup((e) => {
+                                    if (e.keyCode == 13) login();
+                                });
+                            </script>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -65,6 +97,8 @@ return ["layout" => function ($opt, $body, $head) { ?>
             <?php $body($opt); ?>
         </div>
         <?php $opt["layout_essentials_body"]($opt); ?>
+
+
     </body>
 
     </html>
