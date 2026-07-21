@@ -30,7 +30,7 @@ return ["layout" => function ($opt, $body, $head) { ?>
                         <li class='nav-item <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "") ?>'>
                             <a class="nav-link" href="/">Willkommen <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item dropdown  <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "catalog") ?>">
+                        <li class="nav-item dropdown <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "catalog") ?>">
                             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Katalog</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown07">
                                 <a class="dropdown-item" href="/catalog">Alle Produkte</a>
@@ -42,26 +42,24 @@ return ["layout" => function ($opt, $body, $head) { ?>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "userprofile") ?>" href="/userprofile">User</a>
                         </li>
+                        <!--
                         <li class="nav-item">
                             <a class="nav-link disabled" href="#">Disabled</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Katalog</a>
-                            <div class="dropdown-menu" aria-labelledby="dropdown07">
-                                <a class="dropdown-item" href="#">Action</a>
-                                <a class="dropdown-item" href="#">Another action</a>
-                                <a class="dropdown-item" href="#">Something else here</a>
-                            </div>
-                        </li>
+                        -->
+
                     </ul>
                     <div class="my-2 my-md-0 login-form-top">
                         <?php if ($opt["user"]->isLoggedIn) : ?>
                             <span class="text-right">
-                                <?= e($opt["user"]->fields["email"]) ?>
-                                -
-                                <a href="<?= $opt["root"] ?>login/logout">Logout</a>
+                                <div class="login-links">
+
+                                    <?= e($opt["user"]->fields["email"]) ?>
+                                    -
+                                    <a href="<?= $opt["root"] ?>login/logout">Logout</a>
+                                </div>
                             </span>
                         <?php else : ?>
                             <div id="login-error-label" data-test="error"></div>

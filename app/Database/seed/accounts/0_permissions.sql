@@ -7,10 +7,12 @@ INSERT INTO `z_role` (`id`, `name`) VALUES
 INSERT INTO `z_role_permission` (`role`, `name`) VALUES
 -- Admin
 (1, '*.*'),
+(1, 'userprofile.index'),
 
 -- Support
 (2, 'support'),
 (2, 'dashboard'),
+(2, 'userprofile.index'),
 
 -- Customer
 (3, 'customer'),
