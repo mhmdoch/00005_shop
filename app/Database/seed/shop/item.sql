@@ -22,7 +22,7 @@ INSERT INTO `item` (
 (7, 6, 'lego', 3, 1, 69.99, 'EUR'),
 (8, 7, 'lego', 4, 1, 49.99, 'EUR'),
 (9, 8, 'lego', 5, 1, 12.99, 'EUR'),
--- Fünf neue Schuhe
+-- Neun neue Schuhe
 (10, 9, 'shoe', 3, 1, 74.99, 'EUR'),
 (11, 10, 'shoe', 4, 1, 139.99, 'EUR'),
 (12, 11, 'shoe', 5, 1, 129.99, 'EUR'),
@@ -31,4 +31,7 @@ INSERT INTO `item` (
 (15, 14, 'shoe', 8, 1, 79.99, 'EUR'),
 (16, 15, 'shoe', 9, 1, 64.99, 'EUR'),
 (17, 16, 'shoe', 10, 1, 119.99, 'EUR'),
-(18, 17, 'shoe', 11, 1, 149.99, 'EUR');
+(18, 17, 'shoe', 11, 1, 149.99, 'EUR'),
+-- Zwei Tennisschläger
+(19, 18, 'tennisracket', 1, 1, 229.99, 'EUR'),
+(20, 19, 'tennisracket', 2, 1, 189.99, 'EUR');
