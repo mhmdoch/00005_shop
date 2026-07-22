@@ -1,7 +1,3 @@
--- Item Tennisracket
--- Hier stehen die tennisschlägerspezifischen Eigenschaften.
--- Der sichtbare Produktname liegt im zugehörigen Catalog-Eintrag.
-
 CREATE TABLE `item_tennisracket` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `brand` VARCHAR(100) NOT NULL,

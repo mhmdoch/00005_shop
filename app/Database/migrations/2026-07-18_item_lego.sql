@@ -1,6 +1,3 @@
--- Item Lego
--- Hier sind alle Legos gelistet. Die Tabelle kriegt "legotypische" Eigenschaften
-
 CREATE TABLE `item_lego` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(255) NOT NULL,

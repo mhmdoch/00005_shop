@@ -1,6 +1,3 @@
--- Item Ball
--- Hier sind alle Bälle gelistet. Die Tabelle kriegt "balltypische" Eigenschaften
-
 CREATE TABLE `item_ball` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(255) NOT NULL,

@@ -30,15 +30,14 @@ return ["layout" => function ($opt, $body, $head) { ?>
                         <li class='nav-item <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "") ?>'>
                             <a class="nav-link" href="/">Willkommen <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item dropdown <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "catalog") ?>">
+                        <li class="nav-item dropdown <?= \App\Helper\AppHelper::navClass($opt["request"]->store["menuCategory"], "catalog", "item") ?>">
                             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown07" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Katalog</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown07">
                                 <a class="dropdown-item" href="/catalog">Alle Produkte</a>
-                                <?php foreach ($opt["request"]->store["sideBarElements"] ?? [] as $category) { ?>
-
-                                    <a class="dropdown-item" href="#"><?= e($category["name"]) ?></a>
-
-                                <?php } ?>
+                                <a class="dropdown-item" href="/item/indexball">Bälle</a>
+                                <a class="dropdown-item" href="#">Lego</a>
+                                <a class="dropdown-item" href="#">Schuhe</a>
+                                <a class="dropdown-item" href="#">Tennisschläger</a>
                             </div>
                         </li>
                         <li class="nav-item">

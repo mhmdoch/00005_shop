@@ -1,4 +1,3 @@
--- Catalog ist das eigentlich im Shop gelistete Item.
 
 CREATE TABLE `catalog` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,

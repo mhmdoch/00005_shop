@@ -1,6 +1,3 @@
--- Jedes Item besteht verlinkt zu einem spezifischem Item.
--- Hier werden die Preise etc festgelegt und ob das Item aktiv ist
-
 CREATE TABLE `item` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `catalog_id` INT NOT NULL,

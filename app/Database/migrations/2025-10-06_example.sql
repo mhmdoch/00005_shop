@@ -1,4 +1,3 @@
--- Table: example
 CREATE TABLE `example` (
   `id` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `content` VARCHAR(255) NOT NULL,

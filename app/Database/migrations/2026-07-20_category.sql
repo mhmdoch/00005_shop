@@ -1,6 +1,3 @@
--- Categories can be nested.
--- parent_id = NULL marks a root category without a parent.
-
 CREATE TABLE `category` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
   `parent_id` INT DEFAULT NULL,

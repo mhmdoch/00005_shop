@@ -1,4 +1,3 @@
--- Permissions assigned directly to individual users.
 CREATE TABLE IF NOT EXISTS `z_user_permission` (
   `id` INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
   `user` INT NOT NULL,
