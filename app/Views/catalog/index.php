@@ -3,14 +3,13 @@
 
     <div class="card-deck mb-4">
         <?php foreach ($opt["catalogs"] as $catalog) { ?>
-            <?php $loopHelpCounter += 1; ?>
+            <?php $loopHelpCounter++; ?>
 
             <div class="card">
                 <img src="<?php $opt["generateResourceLink"]("assets/img/{$catalog['titlethumb']}"); ?>" class="card-img-top" alt="<?= e($catalog["titlethumb"]) ?>">
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text">Produktbeschreibung</p>
                 </div>
             </div>
 
@@ -18,6 +17,12 @@
     </div>
     <div class="card-deck mb-4">
     <?php } ?>
+<?php } ?>
+
+<?php $missingCards = (3 - ($loopHelpCounter % 3)) % 3; ?>
+
+<?php for ($i = 0; $i < $missingCards; $i++) { ?>
+    <div class="card invisible" aria-hidden="true"></div>
 <?php } ?>
     </div>
 <?php }]; ?>
