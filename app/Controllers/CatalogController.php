@@ -14,4 +14,17 @@ class CatalogController extends z_controller
             "catalogs" => $catalogs,
         ]);
     }
+
+
+
+    public function action_show(Request $req, Response $res)
+    {
+        $catalogId = $req->getParameters(0, 1);
+        $catalog = $req->getModel("Catalog")->getCatalogById($catalogId);
+
+
+        return $res->render("catalog/show", [
+            "catalog" => $catalog
+        ]);
+    }
 }
